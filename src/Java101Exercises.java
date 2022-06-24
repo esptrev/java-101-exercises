@@ -1,5 +1,7 @@
+import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * This file has a set of Java exercises to use for improve your skill level in Java and preparing you for coding
@@ -27,8 +29,7 @@ public class Java101Exercises {
      * @return      The sum
      */
     public static int addInts001(int a, int b) {
-        // TODO: Write code here
-        return 0;
+        return a + b;
     }
 
     /**
@@ -43,7 +44,7 @@ public class Java101Exercises {
      */
     public static String sayHello002(String name) {
         // TODO: Write code here
-        return null;
+        return "Hello " + name + "!";
     }
 
     /**
@@ -85,7 +86,7 @@ public class Java101Exercises {
      */
     public static double addDouble004(double a, double b) {
         // TODO: Write code here
-        return 0.0;
+        return a + b;
     }
 
     /**
@@ -100,7 +101,7 @@ public class Java101Exercises {
      */
     public static String concatenateStrings005(String a, String b) {
         // TODO: Write code here
-        return null;
+        return a.concat(" ").concat(b);
     }
 
     /**
@@ -116,7 +117,7 @@ public class Java101Exercises {
      */
     public static boolean isEqual006(int a, int b) {
         // TODO: Write code here
-        return false;
+        return(a == b);
     }
 
     /**
@@ -132,7 +133,7 @@ public class Java101Exercises {
      */
     public static boolean isGreaterThan007(double a, double b) {
         // TODO: Write code here
-        return false;
+        return ( a > b);
     }
 
     /**
@@ -144,7 +145,7 @@ public class Java101Exercises {
      * @return      The cubed value of the number.
      */
     public static double cube008(double a) {
-        return 0.0;
+        return Math.pow(a,3);
     }
 
     /**
@@ -159,7 +160,7 @@ public class Java101Exercises {
      */
     public static int calcPositiveDifference009(int a, int b) {
         // TODO: Write code here
-        return 0;
+        return Math.abs(a-b);
     }
 
     /**
@@ -174,7 +175,7 @@ public class Java101Exercises {
      */
     public static int calcRemainder010(int a, int b) {
         // TODO: Write code here
-        return 0;
+        return a % b;
     }
 
     /**
@@ -191,8 +192,16 @@ public class Java101Exercises {
      * @return              Result
      */
     public static double preformIndicatedOperation011(String operation, double op1, double op2) {
-        // TODO: Write code here
-        return 0;
+        if(operation.equals("ADD")){
+            return op1 + op2;
+        }else if(operation.equals("SUB")){
+            return op1 - op2;
+        }else if(operation.equals("MUL")){
+            return op1 * op2;
+        }else if(operation.equals("DIV")){
+            return op1 / op2;
+        }
+        return 0.0;
     }
 
     /**
@@ -205,13 +214,18 @@ public class Java101Exercises {
      * @return          An Integer ArrayList of factors of num.
      */
     public static ArrayList<Integer> findFactors012(int num) {
-        // TODO: Write code here
-        return  null;
+        ArrayList<Integer> factorials = new ArrayList<Integer>();
+        for (int i = 1; i <= num; i++) {
+            if(num % i == 0){
+                factorials.add(i);
+            }
+        }
+        return factorials;
     }
 
     /**
      * Exercise 013 - Get Nearest Integer to Real Sum
-     * Given a two double parameters, return the nearest integer sum. If a number is half-way between to integers,
+     * Given two double parameters, return the nearest integer sum. If a number is half-way between twdo integers,
      * round up for positive sums and down for negative sums.
      *
      * LEVEL: EASY
@@ -222,7 +236,9 @@ public class Java101Exercises {
      */
     public static int getNearestIntegerToRealSum013(double firstRealAddend, double secondRealAddend ) {
         // TODO: Write code here
-        return 0;
+        double sum = firstRealAddend + secondRealAddend;
+        System.out.println(sum);
+        return (int) Math.rint(sum);
     }
 
     /**
